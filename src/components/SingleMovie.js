@@ -104,7 +104,7 @@ export default function SingleMovie() {
     Promise.all([fetchMovieDetails(), fetchCast()]).finally(() => {
       setLoading(false);
     });
-  }, [id, apiAccessible]);
+  }, [id, apiAccessible, API_KEY]);
 
   const displayedCast = showAllCast ? cast : cast.slice(0, 12);
 

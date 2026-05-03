@@ -28,7 +28,7 @@ export default function Home() {
       .get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
       .then((response) => setTopRatedMovies(response.data.results.slice(0, 4)))
       .catch((error) => console.log(error));
-  }, []);
+  }, [API_KEY]);
 
   return (
     <div>

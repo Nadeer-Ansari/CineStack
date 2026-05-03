@@ -12,7 +12,7 @@ export default function SearchMovie() {
   let [searchTerm, setSearchTerm] = useState("");
   let answer = useSelector((state) => state.transfer.movieName);
   let dispatch = useDispatch();
-  
+
   const API_KEY = process.env.REACT_APP_API_KEY || "d5689bbae1737c3b9062e710a1909402";
 
   useEffect(() => {
@@ -25,23 +25,23 @@ export default function SearchMovie() {
       const searchMovies = async () => {
         setLoading(true);
         setError(null);
-        
+
         try {
           // CORRECT API URL for searching movies
           const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${encodeURIComponent(answer)}&page=1`;
           console.log("Search URL:", url);
-          
+
           const controller = new AbortController();
           const timeoutId = setTimeout(() => controller.abort(), 15000);
-          
+
           const response = await axios.get(url, {
             signal: controller.signal,
             timeout: 15000
           });
-          
+
           clearTimeout(timeoutId);
           console.log("Search results:", response.data);
-          
+
           if (response.data.results && response.data.results.length > 0) {
             setData(response.data.results);
             setError(null);
@@ -58,13 +58,20 @@ export default function SearchMovie() {
               ]
             });
           }
-          
+
         } catch (err) {
           console.error("Error searching movies:", err);
-          
+
           let errorType = "UNKNOWN";
-          let errorMessage = {};
-          
+
+          if (err.code === "ECONNABORTED" || err.message.includes("timeout")) {
+            errorType = "TIMEOUT";
+          } else if (err.message.includes("Network Error")) {
+            errorType = "NETWORK";
+          }
+
+          const errorMessage = getErrorMessage(errorType);
+
           if (err.code === "ECONNABORTED" || err.message.includes("timeout")) {
             errorType = "TIMEOUT";
             errorMessage = getErrorMessage("TIMEOUT");
@@ -83,14 +90,14 @@ export default function SearchMovie() {
               ]
             };
           }
-          
+
           setError(errorMessage);
           setData([]);
         } finally {
           setLoading(false);
         }
       };
-      
+
       searchMovies();
     } else if (answer === "John Wick") {
       // If "John Wick" is the default, show a message instead of searching
@@ -148,7 +155,7 @@ export default function SearchMovie() {
       <div className="section-header">
         <h1>🔍 Search Movies</h1>
       </div>
-      
+
       {/* Search Form */}
       <div className="row mb-4">
         <div className="col-md-8 mx-auto">
@@ -159,8 +166,8 @@ export default function SearchMovie() {
               className="form-control"
               placeholder="Search for a movie... (e.g., Inception, The Dark Knight)"
               defaultValue={searchTerm}
-              style={{ 
-                background: "var(--bg-card)", 
+              style={{
+                background: "var(--bg-card)",
                 color: "var(--text-primary)",
                 border: "1px solid var(--border-color)",
                 fontSize: "1rem",
@@ -173,13 +180,13 @@ export default function SearchMovie() {
           </form>
         </div>
       </div>
-      
+
       {/* Error Display with VPN/Network Message */}
       {error ? (
         <div className="text-center" style={{ padding: "2rem" }}>
-          <div style={{ 
-            background: "var(--bg-card)", 
-            borderRadius: "16px", 
+          <div style={{
+            background: "var(--bg-card)",
+            borderRadius: "16px",
             padding: "2rem",
             maxWidth: "600px",
             margin: "0 auto",
@@ -195,12 +202,12 @@ export default function SearchMovie() {
             <p style={{ color: "var(--text-secondary)", marginBottom: "1.5rem", lineHeight: "1.6" }}>
               {error.message || "Unable to search for movies. Please check your connection."}
             </p>
-            
+
             {/* Troubleshooting Box */}
-            <div style={{ 
-              background: "rgba(229, 9, 20, 0.1)", 
-              padding: "1.5rem", 
-              borderRadius: "12px", 
+            <div style={{
+              background: "rgba(229, 9, 20, 0.1)",
+              padding: "1.5rem",
+              borderRadius: "12px",
               marginBottom: "1.5rem",
               textAlign: "left"
             }}>
@@ -221,7 +228,7 @@ export default function SearchMovie() {
                 </li>
               </ul>
             </div>
-            
+
             {/* Suggested Movies */}
             <div className="mt-3">
               <p style={{ color: "var(--text-secondary)", marginBottom: "0.75rem" }}>
@@ -240,15 +247,15 @@ export default function SearchMovie() {
                 ))}
               </div>
             </div>
-            
+
             {/* Retry Button */}
-            <button 
-              onClick={() => window.location.reload()} 
-              className="btn-movie" 
-              style={{ 
-                width: "auto", 
-                padding: "0.75rem 1.5rem", 
-                marginTop: "1.5rem", 
+            <button
+              onClick={() => window.location.reload()}
+              className="btn-movie"
+              style={{
+                width: "auto",
+                padding: "0.75rem 1.5rem",
+                marginTop: "1.5rem",
                 background: "#666",
                 display: "inline-flex",
                 alignItems: "center",
