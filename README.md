@@ -1,7 +1,7 @@
 # 🎬 CineScope - Pure Movie Discovery Platform
 
 <div align="center">
-  <img src="./public/cinescope-banner.png" alt="CineStack Banner" style="max-width: 100%;">
+  <img src="./public/images/cinescope-banner.png" alt="CineStack Banner" style="max-width: 100%;">
   
   [![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react)](https://reactjs.org/)
   [![Redux](https://img.shields.io/badge/Redux-Toolkit-764ABC?logo=redux)](https://redux-toolkit.js.org/)
@@ -21,6 +21,33 @@ https://cinescope-pro.netlify.app/
 
 https://cinescope-pro.vercel.app/
 > ⚠️ **Note:** TMDB API may be restricted in some regions (India - Jio/Airtel/Vi). Use VPN if needed.
+
+---
+## 📸 Screenshots
+
+<div align="center">
+  
+### 🏠 Home Page
+| Light Mode | Dark Mode |
+|:-:|:-:|
+| ![Light Mode](./public/images/home-light.png) | ![Dark Mode](./public/images/home-dark.png) |
+
+### 🎬 Movie Pages
+| Popular Movies | Upcoming Movies | Top Rated Movies |
+|:-:|:-:|:-:|
+| ![Popular](./public/images/popular-movies.png) | ![Upcoming](./public/images/upcoming-movies.png) | ![Top Rated](./public/images/toprated-movies.png) |
+
+### 🔍 Search & Movie Details
+| Search Results | Movie Details | Cast Info |
+|:-:|:-:|:-:|
+| ![Search](./public/images/search-results.png) | ![Details](./public/images/movie-details.png) | ![Cast](./public/images/cast-section.png) |
+
+### ⚠️ Error Handling (VPN Required)
+| Troubleshooting Message |
+|:-:|
+| ![Error Message](./public/images/error-message.png) |
+
+</div>
 
 ---
 
