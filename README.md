@@ -1,17 +1,15 @@
 # 🎬 CineStack - Pure Movie Discovery Platform
 
- 
-
-```
-![CineStack Banner](https://via.placeholder.com/1200x400/0a0a0a/e50914?text=CineStack+-+Movie+Discovery+Platform)
-
-[![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react)](https://reactjs.org/)
-[![Redux](https://img.shields.io/badge/Redux- Toolkit-764ABC?logo=redux)](https://redux-toolkit.js.org/)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap)](https://getbootstrap.com/)
-[![TMDB](https://img.shields.io/badge/API-TMDB-01B4E4?logo=themoviedatabase)](https://www.themoviedb.org/)
-[![Netlify](https://img.shields.io/badge/Deploy-Netlify-00C7B7?logo=netlify)](https://www.netlify.com/)
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?logo=vercel)](https://vercel.com/)
-```
+<div align="center">
+  <img src="https://via.placeholder.com/1200x400/0a0a0a/e50914?text=CineStack+-+Movie+Discovery+Platform" alt="CineStack Banner" style="max-width: 100%;">
+  
+  [![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react)](https://reactjs.org/)
+  [![Redux](https://img.shields.io/badge/Redux-Toolkit-764ABC?logo=redux)](https://redux-toolkit.js.org/)
+  [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap)](https://getbootstrap.com/)
+  [![TMDB](https://img.shields.io/badge/API-TMDB-01B4E4?logo=themoviedatabase)](https://www.themoviedatabase.org/)
+  [![Netlify](https://img.shields.io/badge/Deploy-Netlify-00C7B7?logo=netlify)](https://www.netlify.com/)
+  [![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?logo=vercel)](https://vercel.com/)
+</div>
 
   
 
@@ -19,6 +17,8 @@
 
 ## 🌟 Live Demo
 
+https://cinestack-pro.netlify.app/
+https://cine-stack-one.vercel.app/
 > ⚠️ **Note:** TMDB API may be restricted in some regions (India - Jio/Airtel/Vi). Use VPN if needed.
 
 ---
@@ -177,11 +177,11 @@ cinestack/
 
 ### 🚀 Netlify
 
-https://www.netlify.com/img/deploy/button.svg
+https://cinestack-pro.netlify.app/
 
 ### ⚡ Vercel
 
-https://vercel.com/button
+https://cine-stack-one.vercel.app/
 
 ---
 
