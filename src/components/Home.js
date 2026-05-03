@@ -38,7 +38,7 @@ export default function Home() {
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
             <FaFilm size={60} color="#e50914" />
           </div>
-          <h1 className="hero-title">CineStack</h1>
+          <h1 className="hero-title">CineScope</h1>
           <p className="hero-subtitle" style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "0.5rem" }}>
             PURE DISCOVERY
           </p>

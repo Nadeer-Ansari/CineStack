@@ -31,7 +31,7 @@ function Header() {
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <FaFilm style={{ marginRight: "8px" }} />
-          CineStack
+          CineScope
         </Link>
         <button
           className="navbar-toggler"

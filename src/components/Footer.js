@@ -26,7 +26,7 @@ export default function Footer() {
         }}>
           {/* CineStack Brand */}
           <span>
-            🎬 <strong>CineStack</strong>
+            🎬 <strong>CineScope</strong>
           </span>
           
           <span>•</span>
